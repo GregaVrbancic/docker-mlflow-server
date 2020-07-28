@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+
+  waitfordb:
+    image: dadarek/wait-for-dependencies
+    depends_on:
+      - mlflow-db
+    command: mlflow-db:5432
+
+    mlflow-db:
+    image: postgres:11.2-alpine
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_DB=mlflowdb
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - mlflow-db:/var/lib/postgresql/data/pgdata
+
+  mlflow-server:
+    image: gregsi/docker-mlflow-server:1.10.0
+    environment:
+      - BACKEND_URI=postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@mlflow-db/mlflowdb
+    depends_on:
+      - mlflow-db
+      - waitfordb
+
+volumes:
+  mlflow-db:
