@@ -20,6 +20,6 @@ You can also set the following environmental variables:
 
 ### Use already built image
 
-```docker-compose up````
+```docker-compose up```
 
 
