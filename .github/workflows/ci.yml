@@ -29,6 +29,6 @@ jobs:
           context: .
           push: true
           tags: |
-            docker-mlflow-server:latest
-            docker-mlflow-server:${{ steps.meta.outputs.tags }}
+            gregsi/docker-mlflow-server:latest
+            gregsi/docker-mlflow-server:${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
