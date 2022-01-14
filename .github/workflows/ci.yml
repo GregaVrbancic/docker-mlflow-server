@@ -37,9 +37,3 @@ jobs:
             gregsi/docker-mlflow-server:${{ env.TAG_VERSION }}
             ghcr.io/gregavrbancic/docker-mlflow-server:latest
             ghcr.io/gregavrbancic/docker-mlflow-server:${{ env.TAG_VERSION }}
-      - name: Update repo description
-        uses: peter-evans/dockerhub-description@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: gregsi/docker-mlflow-server
