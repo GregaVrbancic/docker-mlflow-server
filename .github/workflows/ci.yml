@@ -3,6 +3,7 @@ name: CI
 on:
   push:
     tags:
+      - "*"
 
 jobs:
   docker:
@@ -33,9 +34,9 @@ jobs:
           push: true
           tags: |
             gregsi/docker-mlflow-server:latest
-            gregsi/docker-mlflow-server:${{ steps.meta.outputs.tags }}
+            gregsi/docker-mlflow-server:${{ env.TAG_VERSION }}
             ghcr.io/GregaVrbancic/docker-mlflow-server:latest
-            ghcr.io/GregaVrbancic/docker-mlflow-server:${{ steps.meta.outputs.tags }}
+            ghcr.io/GregaVrbancic/docker-mlflow-server:${{ env.TAG_VERSION }}
       - name: Update repo description
         uses: peter-evans/dockerhub-description@v2
         with:
