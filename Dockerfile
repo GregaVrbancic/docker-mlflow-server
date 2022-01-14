@@ -3,7 +3,7 @@ LABEL maintainer "Grega Vrbančič <grega.vrbancic@gmail.com>"
 
 WORKDIR /mlflow
 
-ARG MLFLOW_VERSION=1.13.1
+ARG MLFLOW_VERSION=1.16.0
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends default-libmysqlclient-dev libpq-dev build-essential && \
