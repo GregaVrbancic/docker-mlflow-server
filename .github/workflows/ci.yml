@@ -35,8 +35,8 @@ jobs:
           tags: |
             gregsi/docker-mlflow-server:latest
             gregsi/docker-mlflow-server:${{ env.TAG_VERSION }}
-            ghcr.io/GregaVrbancic/docker-mlflow-server:latest
-            ghcr.io/GregaVrbancic/docker-mlflow-server:${{ env.TAG_VERSION }}
+            ghcr.io/gregavrbancic/docker-mlflow-server:latest
+            ghcr.io/gregavrbancic/docker-mlflow-server:${{ env.TAG_VERSION }}
       - name: Update repo description
         uses: peter-evans/dockerhub-description@v2
         with:
