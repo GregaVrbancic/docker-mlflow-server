@@ -1,7 +1,7 @@
 name: CI
 
 on:
-  push:
+  create:
     tags:
 
 jobs:
@@ -24,10 +24,9 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v2.7.0
         with:
           context: .
-          platforms: linux/amd64
           push: true
           tags: |
             gregsi/docker-mlflow-server:latest
