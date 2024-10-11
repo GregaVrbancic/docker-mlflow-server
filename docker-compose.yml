@@ -13,7 +13,7 @@ services:
       - mlflow-db:/var/lib/postgresql/data/pgdata
 
   mlflow-server:
-    image: gregsi/docker-mlflow-server:2.13.2
+    image: gregsi/docker-mlflow-server:2.14.3
     ports:
       - "5000:5000"
     environment:
