@@ -1,6 +1,6 @@
 # MLflow Server Docker Image
 
-Python 3.7 based [MLflow](https://www.mlflow.org/) Docker image.
+Bitnami Python based [MLflow](https://www.mlflow.org/) Docker image.
 
 ## Usage
 
@@ -22,6 +22,8 @@ You can also set the following environmental variables:
 - DB_USER=postgres # Database username
 - DB_PASSWD=postgres # Database password
 - MLFLOW_S3_ENDPOINT_URL=${S3_ENDPOINT_URL}
+- MLFLOW_TRACKING_USERNAME=admin
+- MLFLOW_TRACKING_PASSWORD=password
 - AWS_REGION=${S3_REGION}
 - AWS_ACCESS_KEY_ID=${S3_ACCESS_KEY_ID}
 - AWS_SECRET_ACCESS_KEY=${S3_SECRET_ACCESS_KEY}
