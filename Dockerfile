@@ -1,9 +1,9 @@
-FROM bitnami/python:3.7-prod
+FROM bitnami/python:3.10-prod
 LABEL maintainer "Grega Vrbančič <grega.vrbancic@gmail.com>"
 
 WORKDIR /mlflow
 
-ARG MLFLOW_VERSION=1.30.0
+ARG MLFLOW_VERSION=2.0.1
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends default-libmysqlclient-dev libpq-dev build-essential && \
