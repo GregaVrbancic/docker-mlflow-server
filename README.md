@@ -7,12 +7,12 @@ Python 3.7 based [MLflow](https://www.mlflow.org/) Docker image.
 ### Build and run locally:
 
 ```bash
-docker-compose -f docker-compose-local.yml up
+docker compose -f docker-compose-local.yml up
 ```
 
 ### Build Docker image
 ```bash
-docker-compose -f docker-compose-local.yml build
+docker compose -f docker-compose-local.yml build
 ```
 
 You can also set the following environmental variables:
@@ -26,6 +26,7 @@ You can also set the following environmental variables:
 - AWS_ACCESS_KEY_ID=${S3_ACCESS_KEY_ID}
 - AWS_SECRET_ACCESS_KEY=${S3_SECRET_ACCESS_KEY}
 - ARTIFACT_ROOT=${S3_BUCKET}
+- HOST=${HOST} # exposed MLFlow host (default: 0.0.0.0)
 
 ### Use already built image
 
