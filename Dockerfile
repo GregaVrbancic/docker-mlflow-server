@@ -3,7 +3,7 @@ LABEL maintainer "Grega Vrbančič <grega.vrbancic@gmail.com>"
 
 WORKDIR /mlflow
 
-ARG MLFLOW_VERSION=2.1.1
+ARG MLFLOW_VERSION=2.2.2
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends default-libmysqlclient-dev libpq-dev build-essential && \
@@ -22,6 +22,8 @@ RUN export LC_ALL=C.UTF-8 && export LANG=C.UTF-8
 
 EXPOSE 5000
 
+ENV MLFLOW_TRACKING_USERNAME=admin
+ENV MLFLOW_TRACKING_PASSWORD=password
 ENV DB_HOST localhost
 ENV DB_PORT 5432
 ENV DB_NAME db
